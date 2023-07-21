@@ -1,3 +1,7 @@
 # 0.1.0+1
 
-- TODO: Describe initial release.
+- Initial Commit
+
+# 0.1.1+2
+
+- Fix typo directory name
