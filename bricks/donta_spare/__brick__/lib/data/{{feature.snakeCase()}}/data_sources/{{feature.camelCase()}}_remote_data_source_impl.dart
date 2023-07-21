@@ -8,11 +8,11 @@ class {{ feature.pascalCase() }}RemoteDataSourceImpl implements {{ feature.pasca
   @override
   Future<{{ response.pascalCase() }}Entity> {{ method }}{{ name.pascalCase() }}({{ #isHaveBody }}{{ bodyName.pascalCase() }} body{{ /isHaveBody }}) async {
     try {
-      final _response = await _client.{{ method.snakeCase() }}<Map<String, dynamic>>(
+      final response = await _client.{{ method.snakeCase() }}<Map<String, dynamic>>(
         'url', {{ #isHaveBody }}
         // TODO Add body {{ /isHaveBody }}
       );
-      return {{ response.pascalCase() }}Model.fromJson(_response.data!);
+      return {{ response.pascalCase() }}Model.fromJson(response.data!);
     } on DioException catch (e) {
       throw DioException(
         requestOptions: e.requestOptions,
