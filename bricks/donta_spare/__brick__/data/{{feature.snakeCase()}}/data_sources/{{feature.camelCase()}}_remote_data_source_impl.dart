@@ -13,8 +13,8 @@ class {{ feature.pascalCase() }}RemoteDataSourceImpl implements {{ feature.pasca
         // TODO Add body {{ /isHaveBody }}
       );
       return {{ response.pascalCase() }}Model.fromJson(_response.data!);
-    } on DioError catch (e) {
-      throw DioError(
+    } on DioException catch (e) {
+      throw DioException(
         requestOptions: e.requestOptions,
         error: e.error,
         response: e.response,

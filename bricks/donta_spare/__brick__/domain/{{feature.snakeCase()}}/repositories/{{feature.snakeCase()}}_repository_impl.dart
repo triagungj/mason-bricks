@@ -16,7 +16,7 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
     try {
       final remote{{name.pascalCase()}} = await remoteDataSource.{{method}}{{name.pascalCase()}}({{#isHaveBody}}body{{/isHaveBody}});
       return Right(remote{{name.pascalCase()}});
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx and is also not 304.
       if (e.response != null) {
@@ -28,7 +28,7 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
       } else {
         // Something happened in setting up or sending the request
         //that triggered an Error
-        log(e.message);
+        log(e.message ?? 'Unknown Error');
         return const Left(FailureResponse(message: errorMsg));
       }
     }
