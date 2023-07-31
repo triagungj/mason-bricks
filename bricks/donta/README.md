@@ -21,12 +21,12 @@ A few resources to get you started if this is your first brick template:
 ### 1. Activate melos
 
 ```sh
-dart pub global activate melos
+dart pub global activate mason
 ```
 
 ### 2. Create melos.yaml in Project Directory with configuration:
 
-___melos.yaml___
+___mason.yaml___
 
 ```yaml
 bricks:  
@@ -36,7 +36,13 @@ bricks:
             path: bricks/donta
 ```
 
-#### 3. Create json file with configuration:
+### 3. Initialization Mason
+
+```yaml
+mason init
+```
+
+#### 4. Create json file with configuration:
 
 ___assets/some_features.json___
 
@@ -70,7 +76,7 @@ ___assets/some_features.json___
 }
 ```
 
-#### 4. Create json file with configuration:
+#### 5. Create json file with configuration:
 
 ```sh
 mason make donta -c path/to/file.json -o <dir_destination>
@@ -78,11 +84,3 @@ mason make donta -c path/to/file.json -o <dir_destination>
 #example:  
 mason make donta -c assets/some_example.json -o lib
 ```
-
-[1]: https://github.com/felangel/mason
-[2]: https://docs.brickhub.dev
-[3]: https://verygood.ventures/blog/code-generation-with-mason
-[4]: https://youtu.be/G4PTjA6tpTU
-[5]: https://youtu.be/qjA0JFiPMnQ
-[6]: https://youtu.be/o8B1EfcUisw
-[7]: https://youtu.be/LXhgiF5HiQg
