@@ -1,7 +1,7 @@
 name: donta_spare
 description: A donta for semi modular packages
 
-version: 0.1.1+2
+version: 0.1.2+3
 
 environment:
   mason: ">=0.1.0-dev.50 <0.1.0"

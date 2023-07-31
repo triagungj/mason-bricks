@@ -18,6 +18,59 @@ A few resources to get you started if this is your first brick template:
 - [Observable Flutter: Building a Mason brick][6]
 - [Meet Mason: Flutter Vikings 2022][7]
 
+## How To
+
+### 1. Activate melos
+
+```
+dart pub global activate melos
+```
+
+### 2. Create melos.yaml in Project Directory with configuration:
+
+***melos.yaml***  
+bricks:  
+&nbsp;&nbsp;donta_spare:  
+&nbsp;&nbsp;&nbsp;&nbsp;git:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://github.com/triagungj/mason-bricks.git  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: bricks/donta_spare  
+
+#### 3. Create json file with configuration:
+***assets/some_features.json***   
+{  
+&nbsp;&nbsp;"project_name": "example",  
+&nbsp;&nbsp;"feature": "some_features",  
+&nbsp;&nbsp;"usecases": [  
+&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "get",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "example_event",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "example_event",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": "EventBody"  
+&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "get",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "cart",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "cart",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": null  
+&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "post",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "example_event",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "general",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": "CartBody"  
+&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;]  
+}  
+#### 4. Create json file with configuration:
+
+mason make donta -c path/to/file.json -o <dir_destination>
+
+#example:  
+mason make donta -c assets/some_example.json -o lib
+
 [1]: https://github.com/felangel/mason
 [2]: https://docs.brickhub.dev
 [3]: https://verygood.ventures/blog/code-generation-with-mason

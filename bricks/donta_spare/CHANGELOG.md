@@ -5,3 +5,7 @@
 # 0.1.1+2
 
 - Fix typo directory name
+
+# 0.1.2+3
+
+-   Remove 'lib/' directory (Rollback)
