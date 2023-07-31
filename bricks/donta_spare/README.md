@@ -23,7 +23,7 @@ A few resources to get you started if this is your first brick template:
 ### 1. Activate melos
 
 ```sh
-dart pub global activate melos
+dart pub global activate mason
 ```
 
 ### 2. Create melos.yaml in Project Directory with configuration:

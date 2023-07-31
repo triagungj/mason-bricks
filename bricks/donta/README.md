@@ -18,7 +18,7 @@ A few resources to get you started if this is your first brick template:
 
 ## How To
 
-### 1. Activate melos
+### 1. Activate mason
 
 ```sh
 dart pub global activate mason
