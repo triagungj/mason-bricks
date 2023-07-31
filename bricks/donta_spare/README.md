@@ -64,7 +64,7 @@ ___assets/some_features.json___
       "method": "get",  
       "name": "cart",  
       "response": "cart",  
-      "isHaveBody": true,  
+      "isHaveBody": false,  
       "bodyName": null  
     },  
     {  
