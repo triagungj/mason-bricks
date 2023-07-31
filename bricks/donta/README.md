@@ -68,7 +68,11 @@ ___assets/some_features.json___
 
 #### 4. Create json file with configuration:
 
+```
 mason make donta -c path/to/file.json -o <dir_destination>
+```
 
+```
 #example:  
 mason make donta -c assets/some_example.json -o lib
+```
