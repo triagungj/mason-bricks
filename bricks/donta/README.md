@@ -20,53 +20,55 @@ A few resources to get you started if this is your first brick template:
 
 ### 1. Activate melos
 
-```
 dart pub global activate melos
-```
 
 ### 2. Create melos.yaml in Project Directory with configuration:
 
-***melos.yaml***  
+___melos.yaml___
+```
 bricks:  
-&nbsp;&nbsp;donta_spare:  
-&nbsp;&nbsp;&nbsp;&nbsp;git:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: https://github.com/triagungj/mason-bricks.git  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: bricks/donta  
+    donta_spare:  
+        git:  
+            url: https://github.com/triagungj/mason-bricks.git  
+            path: bricks/donta
+```
 
 #### 3. Create json file with configuration:
-***assets/some_features.json***   
+
+___assets/some_features.json___
+```
 {  
-&nbsp;&nbsp;"project_name": "example",  
-&nbsp;&nbsp;"feature": "some_features",  
-&nbsp;&nbsp;"usecases": [  
-&nbsp;&nbsp;&nbsp;{  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "get",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "example_event",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "example_event",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": "EventBody"  
-&nbsp;&nbsp;&nbsp;},  
-&nbsp;&nbsp;&nbsp;{  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "get",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "cart",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "cart",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": null  
-&nbsp;&nbsp;&nbsp;},  
-&nbsp;&nbsp;&nbsp;{  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"method": "post",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "example_event",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"response": "general",  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"isHaveBody": true,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bodyName": "CartBody"  
-&nbsp;&nbsp;&nbsp;}  
-&nbsp;&nbsp;]  
-}  
+  "project_name": "example",  
+  "feature": "some_features",  
+  "usecases": [  
+    {  
+      "method": "get",  
+      "name": "example_event",  
+      "response": "example_event",  
+      "isHaveBody": true,  
+      "bodyName": "EventBody"  
+    },  
+    {  
+      "method": "get",  
+      "name": "cart",  
+      "response": "cart",  
+      "isHaveBody": true,  
+      "bodyName": null  
+    },  
+    {  
+      "method": "post",  
+      "name": "example_event",  
+      "response": "general",  
+      "isHaveBody": true,  
+      "bodyName": "CartBody"  
+    }  
+  ]  
+}
+```
+
 #### 4. Create json file with configuration:
 
 mason make donta -c path/to/file.json -o <dir_destination>
 
 #example:  
 mason make donta -c assets/some_example.json -o lib
-
-  
