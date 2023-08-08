@@ -8,4 +8,8 @@
 
 # 0.1.2+3
 
--   Remove 'lib/' directory (Rollback)
+- Remove 'lib/' directory (Rollback)
+
+# 0.1.3+4
+
+- Add Error handling and exceptions
