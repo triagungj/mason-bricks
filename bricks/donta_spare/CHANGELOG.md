@@ -13,3 +13,7 @@
 # 0.1.3+4
 
 - Add Error handling and exceptions
+
+# 0.1.4+5
+
+-   Fixed Repo Impl
