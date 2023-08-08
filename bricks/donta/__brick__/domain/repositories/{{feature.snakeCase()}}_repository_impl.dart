@@ -12,7 +12,7 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
 
   {{#usecases}}
   @override
-  Future<Either<FailureResponse, {{response.pascalCase()}}Entity>> {{method.camelCase()}}{{ name.pascalCase() }}({{#isHaveBody}}{{bodyName.pascalCase()}} body{{/isHaveBody}}) async {
+  Future<Either<Failure, {{response.pascalCase()}}Entity>> {{method.camelCase()}}{{ name.pascalCase() }}({{#isHaveBody}}{{bodyName.pascalCase()}} body{{/isHaveBody}}) async {
     try {
       final remote{{name.pascalCase()}} = await remoteDataSource.{{method}}{{name.pascalCase()}}({{#isHaveBody}}body{{/isHaveBody}});
       return Right(remote{{name.pascalCase()}});
@@ -23,14 +23,16 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
         log('${e.response!.data}');
         log('${e.response!.headers}');
         return Left(
-          FailureResponse.fromJson(e.response!.data as Map<String, dynamic>),
+          ServerFailure.fromJson(e.response!.data as Map<String, dynamic>),
         );
       } else {
         // Something happened in setting up or sending the request
-        //that triggered an Error
+        // that triggered an Error
         log(e.message);
-        return const Left(FailureResponse(message: errorMsg));
+        return const Left(ServerFailure(message: errorMsg));
       }
+    } catch (e) {
+      return const Left(ServerFailure(message: errorMsg));
     }
   }
   {{/usecases}}

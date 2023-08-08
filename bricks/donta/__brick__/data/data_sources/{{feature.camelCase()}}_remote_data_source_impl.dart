@@ -19,6 +19,8 @@ class {{ feature.pascalCase() }}RemoteDataSourceImpl implements {{ feature.pasca
         error: e.error,
         response: e.response,
       );
+    } catch(e) {
+      throw ServerException();
     }
   }
   {{ /usecases }}
