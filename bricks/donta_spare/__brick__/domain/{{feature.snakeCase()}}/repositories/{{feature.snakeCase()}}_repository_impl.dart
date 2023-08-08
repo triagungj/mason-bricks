@@ -12,9 +12,9 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
 
   {{#usecases}}
   @override
-  Future<Either<FailureResponse, {{response.pascalCase()}}Entity>> {{method.camelCase()}}{{ name.pascalCase() }}({{#isHaveBody}}{{bodyName.pascalCase()}} body{{/isHaveBody}}) async {
+  Future<Either<Failure, {{response.pascalCase()}}Entity>> {{method.camelCase()}}{{ name.pascalCase() }}({{#isHaveBody}}{{bodyName.pascalCase()}} body{{/isHaveBody}}) async {
     try {
-      final remote{{name.pascalCase()}} = await remoteDataSource.{{method}}{{name.pascalCase()}}({{#isHaveBody}}body{{/isHaveBody}});
+      final remote{const const {name.pascalCase()}} = await remoteDataSource.{{method}}{{name.pascalCase()}}({{#isHaveBody}}body{{/isHaveBody}});
       return Right(remote{{name.pascalCase()}});
     } on DioException catch (e) {
       // The request was made and the server responded with a status code
@@ -31,6 +31,8 @@ class {{feature.pascalCase()}}RepositoryImpl implements {{feature.pascalCase()}}
         log(e.message ?? 'Unknown Error');
         return const Left(FailureResponse(message: errorMsg));
       }
+    } catch (e) {
+      return const Left(ServerFailure(message: errorMsg));
     }
   }
   {{/usecases}}
