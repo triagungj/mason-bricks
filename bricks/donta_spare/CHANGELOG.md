@@ -16,4 +16,8 @@
 
 # 0.1.4+5
 
--   Fixed Repo Impl
+- Fixed Repo Impl
+
+# 0.1.5+6
+
+-   Fix Usecase
