@@ -6,7 +6,7 @@ class {{ usecases.method.pascalCase() }}{{ usecases.name.pascalCase() }}Usecase 
     final {{ feature.pascalCase() }}Repository _repository;
 
     @override
-    Future<Either<FailureResponse, {{ usecases.response.pascalCase() }}Entity>> call({{ #usecases.isHaveBody }}{{ usecases.bodyName.pascalCase() }} params{{ /usecases.isHaveBody }}) {
+    Future<Either<Failure, {{ usecases.response.pascalCase() }}Entity>> call({{ #usecases.isHaveBody }}{{ usecases.bodyName.pascalCase() }} params{{ /usecases.isHaveBody }}) {
     return _repository.{{ usecases.method.lowerCase() }}{{ usecases.name.pascalCase() }}({{ #usecases.isHaveBody }}params{{ /usecases.isHaveBody }});
     }
 }
