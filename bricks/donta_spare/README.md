@@ -21,13 +21,19 @@ A few resources to get you started if this is your first brick template:
 
 ## How To
 
-### 1. Activate melos
+### 1. Activate mason_cli
 
 ```sh
-dart pub global activate mason
+dart pub global activate mason_cli
 ```
 
-### 2. Create melos.yaml in Project Directory with configuration:
+### 2. Initialization Mason
+
+```sh
+mason init
+```
+
+### 3. Add dependencies on melos.yaml in Project Directory with configuration:
 
 ___melos.yaml___
 
@@ -39,13 +45,13 @@ bricks:
             path: bricks/donta_spare
 ```
 
-### 3. Initialization Mason
+### 4. Run Mason Get
 
 ```yaml
-mason init
+mason get
 ```
 
-#### 4. Create json file with configuration:
+#### 5. Create json file with configuration:
 
 ___assets/some_features.json___
 
@@ -79,7 +85,7 @@ ___assets/some_features.json___
 }
 ```
 
-#### 5. Create json file with configuration:
+#### 6. Run Donta with Mason:
 
 ```sh
 mason make donta_spare -c path/to/file.json -o <dir_destination>
